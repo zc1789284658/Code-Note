@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="runProxy()">proxy 一个 person</button>
+    <button onclick="newPerson()">new 一个 person</button>
+    <button onclick="new_Person()">new 一个 person 的 proxy</button>
+    <!-- <button onclick="runProxy()">proxyPerson</button> -->
+</body>
+<script>
+    class Person {
+        constructor(name = '无名氏', age = '年龄不详') {
+            [this.name, this.age] = [name, age]
+            // console.log(this.name,this.age)
+        }
+        getName() {
+            console.log('getName', this.name)
+        }
+        getAge() {
+            console.log('getAge', this.age)
+        }
+        get name(){
+            console.log('from get',this);
+        }
+        set name(newVal){
+            console.log('from set',this)
+        }
+        get age(){
+            console.log('from set',this)
+        }
+        set age(newVal){
+            console.log('from set',this)
+        }
+    };
+
+    let _Person = new Proxy(Person, {
+        construct(target, arrlist, newTarget) {
+            return new target(...arrlist)
+        }
+    })
+
+    newPerson = () => {
+        let person = new Person("按钮2","2");
+        person.getAge();
+        person.getName();
+        console.log(person.name);
+        console.log(person.age);
+    }
+
+    new_Person = () => {
+        let person = new _Person("按钮3","3");
+        person.getAge();
+        person.getName();
+        person.name;
+        person.age;
+    }
+    runProxy = () => {
+
+        let lj = new Person('按钮1', 1)
+
+        // console.log(Zhangsan, Proxy)
+        var obj;
+        try {
+            obj = new Proxy(lj, {
+                get(target, key, receiver) {
+                    console.log('get', arguments)
+                    return Reflect.get(target, key, receiver);
+                },
+                set(target, key, value, receiver) {
+                    console.log('set', arguments)
+                    return Reflect.set(target, key, receiver);
+                }
+            });
+        } catch (e) {
+            console.log(e)
+        }
+
+        console.log('pro', obj.age);
+        console.log('obj', lj.age);
+
+    }
+</script>
+
+</html>
