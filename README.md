@@ -1,37 +1,45 @@
-## Welcome to GitHub Pages
+# 本人写代码时记录的笔记
+[测试链接](https://github.com/zc1789284658/Code-Note/edit/master/README.md)
 
-You can use the [editor on GitHub](https://github.com/zc1789284658/Code-Note/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+欢迎进行[百度](https://www.baidu.com) 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+也欢迎各种[跤流](https://space.bilibili.com/335434431)
 
-### Markdown
+更更欢迎`star`以及`fork`
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+---
+### 1.[VSCode](https://github.com/zc1789284658/Code-Note/edit/master/VSCode/main.md)
 
-```markdown
-Syntax highlighted code block
+### 2.[通信(Tcp/Udp/Http/XHR/FormData)](https://github.com/zc1789284658/Code-Note/edit/master/Http/main.md)
 
-# Header 1
-## Header 2
-### Header 3
+### 3.[微信小程序](https://github.com/zc1789284658/Code-Note/edit/master/WX/main.md)
 
-- Bulleted
-- List
+### 4.[webpack](https://github.com/zc1789284658/Code-Note/edit/master/webpack/main.md)
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+### 5.[Linux](https://github.com/zc1789284658/Code-Note/edit/master/linux/main.md)
 
-[Link](url) and ![Image](src)
-```
+### 6.[vue](https://github.com/zc1789284658/Code-Note/edit/master/vue/main.md)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### 7.[react](https://github.com/zc1789284658/Code-Note/edit/master/react/main.md)
 
-### Jekyll Themes
+### 8.[angular](https://github.com/zc1789284658/Code-Note/edit/master/ng/main.md)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/zc1789284658/Code-Note/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### 9.[数据结构](https://github.com/zc1789284658/Code-Note/edit/master/data-structure/main.md)
 
-### Support or Contact
+### 10.[算法](https://github.com/zc1789284658/Code-Note/edit/master/algotithm/main.md)
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### 11.[js设计模式](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/main.md)
+
+### 12.[笔记](https://github.com/zc1789284658/Code-Note/edit/master/notes/main.md)
+
+![THANKS](https://avatars2.githubusercontent.com/u/15063583?s=40&v=4)
+
+
+
+---
+
+[](这是样式表)
+<style>
+.color__main{color:#00a0e9}
+</style>
