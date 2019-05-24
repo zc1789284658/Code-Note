@@ -37,40 +37,38 @@
 // //戏我演过很多,可游戏我只玩贪玩懒月
 // console.log('\r\n----------------')
 
-
-
 var ceshi = {
-  get : function (target,key) {
-      test(key,'get');
-  return target[key];
+  get: function(target, key) {
+    test(key, "get");
+    return target[key];
   },
-  set : function (target,key,value) {
-  test(key,'set');
-  if(key === 'age'){
-      if(0<value<100){
-              console.log(`年龄是${value}`);
-          }
-          if(value>100){
-          console.log("输入的年龄无效！！！");
-          }
-          if(value<0){
-              console.log("年龄不能为负数");
+  set: function(target, key, value) {
+    test(key, "set");
+    if (key === "age") {
+      if (0 < value < 100) {
+        console.log(`年龄是${value}`);
       }
-  }else{
+      if (value > 100) {
+        console.log("输入的年龄无效！！！");
+      }
+      if (value < 0) {
+        console.log("年龄不能为负数");
+      }
+    } else {
       console.log("你传入的参数不对");
+    }
+    return true;
   }
-  return true;
-  },
+};
+function test(key, action) {
+  if (key[0] === "_") {
+    return console.log("你传入的参数不对，请重新传入参数");
+  }
 }
-function test(key,action) {
-  if(key[0] === '_'){
-      return console.log("你传入的参数不对，请重新传入参数");
-  }
-}                  
-var target = {} ;
-var proxy = new Proxy(target,ceshi);
+var target = {};
+var proxy = new Proxy(target, ceshi);
 
-console.log(proxy.age);            //undefined             
-console.log(proxy.age = 20);        //年龄是20  20
-console.log(proxy.age = 120);        //年龄是120      输入的年龄无效！！！ 120
-console.log(proxy._age);            //undefined    
+console.log(proxy.age); //undefined
+console.log((proxy.age = 20)); //年龄是20  20
+console.log((proxy.age = 120)); //年龄是120      输入的年龄无效！！！ 120
+console.log(proxy._age); //undefined
