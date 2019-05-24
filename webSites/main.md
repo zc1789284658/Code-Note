@@ -34,3 +34,6 @@
 11. MDN
     - [Web开发板块](https://developer.mozilla.org/zh-CN/docs/Web)
     - [JS板块](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+12. 字体
+    - [DaFont](https://www.dafont.com/)
+    - [Fonts2u](https://fonts2u.com/)
