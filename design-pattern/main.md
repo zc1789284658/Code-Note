@@ -1,214 +1,166 @@
 # 设计模式（js）
-## 创建类模式
-### 构造器模式
+
+## 创建类型设计模式
+
+### [构造器模式/Constructor](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/constructor.md)
 > 关键词：使用原型/类，替代重复的对象创建操作
-```js
-//使用构造器模式前
-var wangyi = {
-    name:'wangyi',
-    age:50,
-    gender:'男'
-}
-var wanger = {
-    name:'wanger',
-    age:50,
-    gender:'男'
-}
-var wangsan = {
-    name:'wangsan',
-    age:50,
-    gender:'男'
-}
-var wangsi = {
-    name:'wangsi',
-    age:50,
-    gender:'男'
-}
-console.log(wangyi,wanger,wangsan,wangsi)
 
-//--------------------使用构造器模式后---------------
-function Person(name , age , gender){
-    this.name = name;
-    this.age = age;
-    this.gender = gender;
-
-    //此处函数会复制到每一个new出来的实例中，需要原型模式优化
-    this.getAge = function(){
-        return 'my age is :'+ this.age
-    }
-}
-
-var wangyi = new Person('王一',50,'男')
-var wanger = new Person('王二',50,'男')
-var wangsan = new Person('王三',50,'男')
-var wangsi = new Person('王四',50,'男')
-console.log(wangyi,wanger,wangsan,wangsi)
-```
-### 原型模式
+### [原型模式/Prototype](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/proto.md)
 > 将共用的属性/函数，挂载到原型中，免于每次new对象时，都将公用的部分复制一份到实例中
 
-```js
-//以上面构造器模式为例，修改后
-Person.prototype.getAge = function(){
-    return 'my age is :'+ this.age
-}
-```
-> ES6 class 为构造器模式和原型模式的结合
-```js
-//ES6 class
-class Person {
-    constructor((name , age , gender){
-        this.name = name;
-        this.age = age;
-        this.gender = gender;
-    }
-    getAge(){
-         return 'my age is :'+ this.age
-    }
-}
-
-```
-### 构建者/创建者/创造者 模式
+### [构建者/创建者/创造者 模式/Builder](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/builder.md)
 > 对象的结构不变的情况下，需要在创建对象前，进行各种中间层处理时，可以使用创建者模式，交由创建者统一管理创建（统一管理后，便于统计/验证/管理）
-```js
-//ES5
-function Student(){}
 
-function StudentBuilder(){
-    this.student = new Student();
-}
-StudentBuilder.prototype.setName = function(name){
-    //可以添加中间层，例如统计/验证规则/入口管理等，防止出现在其他地方设置属性，导致出现难以查找的bug
-    this.student.name = name;
-}
-StudentBuilder.prototype.setAge = function(age){
-    this.student.age = age;
-}
-StudentBuilder.prototype.setGender = function(gender){
-    this.student.gender = gender;
-}
-StudentBuilder.prototype.build = function(){
-    return this.student;
-}
+### [工厂模式/Factory](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/factory.md)
+> 根据入参的不同，创建**部分参数不同**的对象或者**不同类型的对象**（ 根据需求生成不同的对象 ）
 
-var studentBuilder =new StudentBuilder();
-studentBuilder.setName('wangsi');
-studentBuilder.setAge(99);
-studentBuilder.setGender('男');
-studentBuilder.build();
+### [抽象工厂模式/Abstract](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/AbstractFactory.md)
+> 根据参数，需要哪个工厂返回哪个工厂，由调用方决定合何时使用工厂（不生产对象，返回工厂）
 
-//ES6
-var StudentCreatedCount = 0;
-var StudentBuiltCount = 0;
-class Student{
-    constructor(){
+### [单例模式/Singleton](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/singleton.md)
+> new对象时返回同一个对象，
+1. 闭包
+2. 对象挂载到对象中而非方法中 ）
 
-    }
-}
-class StudentBuilder{
-    constructor(){
-        StudentCount ++;
-        this.student = new Student()
-    }
-    setName(name){ 
-        this.student.name = name 
-    }
-    setAge(age){ 
-        this.student.age = age; 
-    }
-    setGender(gender){ 
-        this.student.gender = gender;
-    }
-    build(){
-        console.log(`has created ${StudentCreatedCount} student , has built {StudentBuiltCount} student`)
-        return this.student
-    }
-}
+----
 
-var a = new StudentBuilder();
-var b = new StudentBuilder();
-var c = new StudentBuilder();
-var d = new StudentBuilder();
-var e = new StudentBuilder();
-var f = new StudentBuilder();
-var g = new StudentBuilder();
-a.build();
-b.build();
-c.build();
-d.build();
-e.build();
-f.build();
-g.build();
-//has created 7 student , has built 1 student
-//...
-//has created 7 student , has built 7 student
+## 结构型设计模式
 
-```
+### 装饰者模式/Decorator
 
-### 工厂模式
-> 根据入参的不同，创建**部分参数不同**的对象或者**不同类型的对象**
-```js
-//ES5
-function Student(name,subjects){
-    this.name =  name;
-    this.subjects = subjects;
-}
-function  StudentFactory(name,type){
-    switch(type){
-        case "LIBERALARTS":
-            return new Student(name,['政治','历史','地理']);
-            break;
-        case "SCIENCE":
-            return new Student(name,['物理','化学','生物'])
-            break;
-        default:
-            throw 'StudentFactory arguments error: not valid argument `type`:'+type 
-    }
-}
-var whh = StudentFactory('王花花','LIBERALARTS')
-var lsd = StudentFactory('李双但','SCIENCE')
-console.log(whh,lsd)
-//Student { name: '王花花', subjects: [ '政治', '历史', '地理' ] } Student { name: '李双但', subjects: [ '物理', '化学', '生物' ] }
+### 外观模式/Facede
 
-//ES6
-class Student{
-    constructor(name , subjects){
-        this.name =  name
-        this.subjects = subjects
-    }
-}
-const StudentFactory(name , type) =>{
-     switch(type){
-        case "LIBERALARTS":
-            return new Student(name,['政治','历史','地理']);
-            break;
-        case "SCIENCE":
-            return new Student(name,['物理','化学','生物'])
-            break;
-        default:
-            throw `StudentFactory arguments error: not valid argument 'type':${type}`
-    }
-}
+### 享元模式/Flyweight
 
-const whh = StudentFactory('王花花','LIBERALARTS')
-const lsd = StudentFactory('李双但','SCIENCE')
-const error = StudentFactory('李双但','error')
-console.log(whh,lsd)
-//StudentFactory arguments error: not valid argument 'type':error
-```
+### 适配器模式/Flyweight
+
+### [代理模式/Proxy](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/proxy.md)
+> 为对象提供一个代用品或者占位符，以便控制对它的访问
+
+### 桥接模式
+
+### 组合模式
+----
+
+## 行为型设计模式
+
+### 解释器模式
+
+### 模板方法模式
+
+### 职责链模式
+
+### 命令模式
+
+### [迭代器模式（Iterator）](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/iterator.md)
+
+### 中介者（Mediator）
+
+### 备忘录模式
+
+### 观察者模式（Observer）
+
+### 状态机模式
+
+### [策略模式（Strategy）](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/Strategy.md)
+> 定义一系列的算法，将他们封装起来，并且使他们可以相互替换。处理掉大量的ifElse/switchCase
+
+### 访问者模式（Visitor）
+
+---
+# 图解
+![image](https://images0.cnblogs.com/blog/430074/201301/19000456-f08651c4980d401bb1e73aa7e1d59012.png)
+
+创建模式：单件模式、工厂模式、抽象工厂模式、生成器模式、原型模式。
+
+结构模式：适配器模式、桥接模式、组成模式、装饰模式、外观模式、享元模式、代理模式。
+
+行为模式：中介者模式、命令模式、备忘录模式、状态模式、策略模式、解释器模式、迭代器模式、观察者模式、访问者模式、模板方法模式。
+
+ 
+
+**第一类**：
+
+1. 单件模式(Singleton Pattern):
+    > 保证一个类仅有一个实例，并提供一个访问它的全局访问点。
+    - 例：跨窗体访问同一个实例。
+2. 工厂模式(Factory Pattern):
+    > 根据提供给工厂的数据，从一系列相关的类中选择一个类实例并返回。
+    - 例:Oracle,SQL Server 访问类的选择
+3. 抽象工厂模式(Abstract Factory Pattern):
+    > 为一组类返回一个工厂。
+4. 生成器模式(Builder Pattern):
+    > 根据提供给他的数据及表示，组装成新的对象。 
+    - 例：根据用户不同的选择显示不同控件。
+5. 原型模式(Prototype Pattern):
+    > 由结果到一个新的结果。
+    - 例：根据由执行的SQL 查询结果得到另一个结果。
+    - 与生成器类似工厂，两者都返回由许多方法的对象组成的类。
+    - 差别:抽象工厂返回一系列相关的类。
+    - 生成器是根据提供给它的数据一步一步地构建一个复杂的对象。
+
+**第二类**:
+
+1. 适配器模式(Adapter Pattern):
+    > 将一个类将一种接口转换成另一种接口。
+2. 桥接模式(Bridge Pattern):
+    > 类的接口和它的实现相分离，无需改变调用者的代码即可替代实现的过程。
+3. 组成模式(Composite Pattern):
+    > 组合就是对象的结合。可以构建部分-整体的关系或数据的树形关系。
+4. 装饰模式(Decorator Pattern):
+    > 用一个类包装给定的类改变单个对象的行为，但不需要创建一个新的派生类。
+5. 外观模式(Facde Pattern):
+    > 可以将一系统复杂的类包装成一个简单的封闭接口。
+6. 享元模式(Flyweight Pattern):
+    > 通过共享（把参数移动外部）大幅地减少单个实例的数目。
+7. 代理模式(Proxy Pattern):
+    > 为一个复杂的对象提供一个简单的占位对象。
+
+**第三类**：
+
+1. 中介者模式(Mediator Pattern):
+    > 中介者做为唯一了解其它类的一个,简化了通信.促进类之音的松散便于修改维护。
+    - 每个和中介者通信的控件都称为同事。
+    - 应用:可视界面的程序中，当面临多个对象之间复杂的通信时，可使用。
+
+2. 命令模式(Command Pattern):
+    > 只将请求转发给特定的对象。
+    - 目的：将程序的界面和操作分离。缺点：增加了散乱的小类
+
+3. 备忘录模式(Memento Pattern):
+    > 保存对象的数据以便以后能够恢复它。
+    - 发起人(Originator):是一个对象，我们要保存它的状态。
+    - 备忘录(Memento):是另外一个对象，它保存了发起人的状态。
+    - 负责人(Caretaker):管理状态保存的时机，保存备忘录，并且如果需要的话，使用备忘录恢复发起人的状态。
+
+4. 状态模式(State Pattern):
+    > 用一个对象表示程序的状态，并通过转换对象来转换程序的状态。
+    - 以前,根据传进来的参数执行不同的计算或显示不同的内容。switch-case/if else状态模式要取代它。
+
+5. 策略模式(Stractegy Pattern):
+    > 与状态模式相似,根据需要选择一封装在Context驱动器类。
+
+6. 观察者模式(Observer Pattern):
+    > 以多种形式显示数据。在观察者模式中，把数据称为目标(Subject),把每种显示称为观察者(Observer)
+
+7. 解释器模式(Interpreter Pattern):
+    > 为某种语言定义一个文法，并用该文法解释语言中的语句。
+    
+    适用性:
+    - 当读者需要一个命令解释器分析用户命令时。
+    - 当程序需要分析一个代数串时。
+    - 发程序要生成各种形式的输出时。
+
+8. 迭代器模式(Iterator Pattern):
+    > 允许使用一个标准的接口顺序访问一个数据列表或集合。
+
+9. 模板方法模式（Template Method Pattern):
+    > 先创建一个父类，把其中一个或多个方法留个子类实现。是一种非常简单又常用的模式。思想：将一个类的基本部分抽取出来放到一个基类中，不必重出现在一个派生类中。
 
 
-## 单例模式
-
-
-
-## 发布订阅模式
-
-## 观察者模式
-
-
-## 迭代器模式
-
-## 代理模式
-
-## 
+10. 职责链(Chain of Responsibility):允许多个类处理同一个请求。
+    
+    要点：
+    - 链的组织是从最特珠的到最一般的。
+    - 不能保证在任何情况下都会有响应。
+    - 职责链用于分析器与编译器。

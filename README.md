@@ -27,7 +27,7 @@
 
 ### 9.[数据结构](https://github.com/zc1789284658/Code-Note/edit/master/data-structure/main.md)
 
-### 10.[算法](https://github.com/zc1789284658/Code-Note/edit/master/algotithm/main.md)
+### 10.[算法](https://github.com/zc1789284658/Code-Note/edit/master/algorithm/main.md)
 
 ### 11.[js设计模式](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/main.md)
 
