@@ -1,11 +1,13 @@
 # 本人写代码时记录的笔记
-[测试链接](https://github.com/zc1789284658/Code-Note/edit/master/README.md)
 
-欢迎进行[百度](https://www.baidu.com) 
+本人笔记大多记录在有道云中，目前正慢慢向github迁移
+<!--[测试链接](https://github.com/zc1789284658/Code-Note/edit/master/README.md)-->
 
-也欢迎各种[跤流](https://space.bilibili.com/335434431)
+<!--欢迎进行[百度](https://www.baidu.com) -->
 
-更更欢迎`star`以及`fork`
+<!--也欢迎各种[跤流](https://space.bilibili.com/335434431)-->
+
+<!--更更欢迎`star`以及`fork`-->
 
 ---
 ### 1.[VSCode](https://github.com/zc1789284658/Code-Note/edit/master/VSCode/main.md)
