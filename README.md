@@ -18,7 +18,6 @@
 
 ### 4.[webpack](https://github.com/zc1789284658/Code-Note/edit/master/webpack/main.md)
 
-
 ### 5.[Linux](https://github.com/zc1789284658/Code-Note/edit/master/linux/main.md)
 
 ### 6.[vue](https://github.com/zc1789284658/Code-Note/edit/master/vue/main.md)
@@ -36,6 +35,8 @@
 ### 12.[笔记](https://github.com/zc1789284658/Code-Note/edit/master/notes/main.md)
 
 ### 13.[推荐网站](https://github.com/zc1789284658/Code-Note/edit/master/webSites/main.md)
+
+### 14.[单词](https://github.com/zc1789284658/Code-Note/edit/master/words/main.md)
 
 ![THANKS](https://avatars2.githubusercontent.com/u/15063583?s=40&v=4)
 
