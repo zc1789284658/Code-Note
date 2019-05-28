@@ -251,6 +251,6 @@ this is command1
 */
 ```
 
-查看[宏命令](#macroCommand)中的命令，可以发现
+> 查看[宏命令](#macroCommand)中的命令，可以发现
 - 其中的Command1/2/3中并未包含任何receiver的信息，这种完全将接收者和发送者解耦的命令可以认为是`傻瓜式`的，
 - 其与[策略模式](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/Strategy.md)非常接近，从代码结构上无法区分，只能从意图上进行区分
