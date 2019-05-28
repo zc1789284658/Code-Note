@@ -50,7 +50,7 @@
 
 ### 职责链模式
 
-### 命令模式
+### [命令模式](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/command.md
 
 ### [迭代器模式（Iterator）](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/iterator.md)
 

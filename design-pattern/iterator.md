@@ -23,7 +23,7 @@ forEach([1,2,3,4,5],function(item , idx){
 //4 3
 //5 4
 ```
-> 自定义内部迭代器
+> 自定义外部迭代器（和java中的Iterator功能类似）
 ```js
 var Iterator = function(obj){
     var current = 0;
