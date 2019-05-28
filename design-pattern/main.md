@@ -1,5 +1,7 @@
 # 设计模式（js）
 
+提示：`标红`的模式表示此模式在js中使用场景不多或者不重要。
+
 ## 创建类型设计模式
 
 ### [构造器模式/Constructor](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/constructor.md)
@@ -20,19 +22,22 @@
 ### [单例模式/Singleton](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/singleton.md)
 > new对象时返回同一个对象，
 1. 闭包
-2. 对象挂载到对象中而非方法中 ）
+2. 对象挂载到对象中而非方法中 
 
 ----
 
 ## 结构型设计模式
 
-### 装饰者模式/Decorator
+### [装饰器模式/Decorator0]()
+> 为对象添加新功能，并且不改变原有的结构和功能
 
-### 外观模式/Facede
+### [`外观模式(门面模式)/Facede`](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/Facade.md)
+> 外观模式在javascript中的使用场景并不多。外观模式主要是为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使子系统更容易使用
 
 ### 享元模式/Flyweight
 
-### 适配器模式/Flyweight
+### [适配器模式/Adaptor](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/Adaptor.md)
+> 适配器模式的作用时解决两个软件实体间的接口不兼容的问题。使用适配器模式后，原本由于接口不兼容而不能工作的两个软件实体可以一起工作。 
 
 ### [代理模式/Proxy](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/proxy.md)
 > 为对象提供一个代用品或者占位符，以便控制对它的访问
@@ -40,36 +45,54 @@
 ### 桥接模式
 
 ### 组合模式
+
 ----
 
 ## 行为型设计模式
 
-### 解释器模式
+### [`解释器模式/Interpreter`](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/Interpreter.md)
+> 描述语言语法如何定义，如何解释和编译
 
 ### 模板方法模式
 
 ### 职责链模式
 
 ### [命令模式](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/command.md)
+> 命令模式是一种松耦合的方式，将发布者和执行者分离。命令模式中的命令指的是一个执行某些特定事情的指令
 
 ### [迭代器模式（Iterator）](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/iterator.md)
+> 提供一种方法顺序访问一个集合对象中的各个元素，而又不需要暴露该对象的内部表示。使用迭代器模式后，即使不关心对象的内部构造，也能按顺序访问其中的每个元素
 
-### 中介者（Mediator）
+### [`中介者（Mediator`）](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/mediator.md)
+> 通过一个中间对象，使对象之间多对多的管理变成一对多的关系。
 
 ### 备忘录模式
 
-### 观察者模式（Observer）
+### [观察者模式|发布订阅模式（Observer|Pub/Sub）](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/pub&sub.md)
+> 本模式又称为**观察者模式**，它定义**对象间的一种一对多的依赖关系**，当一个对象的状态发生改变时，所有依赖于它的对象都将得到通知
 
-### 状态机模式
+### [状态机模式（State Machine）](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/stateMachine.md)
+>状态模式的关键是区分事物内部的状态，事物内部状态的改变往往会带来事物的行为改变
 
 ### [策略模式（Strategy）](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/Strategy.md)
 > 定义一系列的算法，将他们封装起来，并且使他们可以相互替换。处理掉大量的ifElse/switchCase
 
-### 访问者模式（Visitor）
+### [访问者模式（Visitor）](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/visitor.md)
+> 将数据结构和数据操作进行分离,使用场景不多
 
 ---
+
 # 图解
-![image](https://images0.cnblogs.com/blog/430074/201301/19000456-f08651c4980d401bb1e73aa7e1d59012.png)
+
+![image](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/image/design-patter-1.webp)
+
+![image](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/image/design-patter-2.webp)
+
+
+# 文字解释
+分类：
+
+![image](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/image/design-patter-3.png)
 
 创建模式：单件模式、工厂模式、抽象工厂模式、生成器模式、原型模式。
 
