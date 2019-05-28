@@ -1,5 +1,5 @@
 # 本人写代码时记录的笔记
-[TOC]
+
 本人笔记大多记录在有道云中，目前正慢慢向github迁移
 <!--[测试链接](https://github.com/zc1789284658/Code-Note/edit/master/README.md)-->
 
