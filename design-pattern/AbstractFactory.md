@@ -1,4 +1,5 @@
 # 抽象工厂模式
+> 工厂的聚合
 ```js
 function Student(name , age) {
     this.name = name;

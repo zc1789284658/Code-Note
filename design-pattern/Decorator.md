@@ -184,14 +184,26 @@ a()
 class Demo{
 
 }
-//装饰方法,本质就是将@testDec下的Demo传进testDec()内，
-function testDec(target){
+/** 
+装饰方法,本质就是将@testDec下的Demo传进testDec()内，
+@param target : 装饰对象
+@param name : 装饰对象字面量名
+@param descriptor:装饰对象的属性描述符
+*/
+function testDec(target ,name ,descriptor){
     target.isDec = true
 }
 
 console.log(Demo.isDec)//true
 
 ```
+一个属性描述符是一个记录，由下面属性当中的某些组成的：
+- value：该属性的值(仅针对数据属性描述符有效)
+- writable：当且仅当属性的值可以被改变时为true。(仅针对数据属性描述有效)
+- get：获取该属性的访问器函数（getter）。如果没有访问器， 该值为undefined。(仅针对包含访问器或设置器的属性描述有效)
+- set：获取该属性的设置器函数（setter）。 如果没有设置器， 该值为undefined。(仅针对包含访问器或设置器的属性描述有效)
+- configurable：当且仅当指定对象的属性描述可以被改变或者属性可被删除时，为true。
+- enumerable：当且仅当指定对象的属性可以被枚举出时，为 true。
 
 ### 应用
 - 数据上报
