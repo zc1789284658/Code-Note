@@ -97,7 +97,7 @@ Page({
 - 在html->wxml时，会出现bug，导致代码层级和实际显示的层级不一致
 
 ## 11.远端获取数据
-```
+```js
 wx.request({
     url:,
     dataType,
@@ -105,8 +105,26 @@ wx.request({
     fail(){e}
 })
 ```
-## 12.页面切换
+
+结合Promise
+
+```js
+wx.$request = function(){
+    return new Promise(function(resolve,reject){
+        wx.request({
+            url:'xxxxxx',
+            success:function(res){
+                resolve(res)
+            },
+            fail:function(e){
+                reject(e)
+            }        
+        })
+    })
+}
 ```
+## 12.页面切换
+```js
 <!-- 页面跳转 -->
 <view>
     <navigator url="/pages/cam/cam"></navigator>
@@ -116,7 +134,7 @@ wx.request({
 ```
 ## 13.拍照
 - 配合<camera>标签使用
-```
+```js
 const cam = wx.createCameraContext();
 cam.takePhoto({
     quality:'high',
@@ -154,11 +172,28 @@ wx.scanCode()...
     * |-doc\
     * |-plugin\         主体目录,主要有index.json中的publicComponent
     * |-project.config.json
+
 ## 17.声明：
 ```
 小程序
     APP({})
     Page({})
-插件
+组件（插件）
     Component({})
 ```
+
+## 18.底部菜单栏
+app.json中，一级输入tab，即可自动提示如下内容
+```js
+{
+    "tabBar": {
+        "list": [{
+            "pagePath": "pages/index/index",                    //导航至哪个页面
+            "text": "index",                                    //显示文字
+            "iconPath": "asset/images/index/home.png",          //默认图标
+            "selectedIconPath": "asset/images/index/home.png"   //选中图标
+        }]
+    }
+}
+```
+![图片](./images/wx-tabbar.png)

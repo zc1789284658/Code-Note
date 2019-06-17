@@ -1,4 +1,14 @@
 # 命令模式
+目录：
+- [定义](#difine)
+- [案例](#example)
+- [添加撤销](#undo)
+- [dom发起者](#dom)
+- [重做](#reply)
+- [宏命令](#macroCommand)
+
+<span id="difine"><span>
+### 定义
 > 命令模式是一种松耦合的方式，将发布者和执行者分离，命令模式中的命令指的是一个执行某些特定事情的指令。
 
 大概流程如下：
@@ -11,6 +21,9 @@
 
 - 在实际情况中，发起者可能是个dom非正常class元素，封装可能不同，不要太诧异即可。
 - 由上可以得知，操作需要被封装，接收者需要被封装，如下例：
+
+<span id="example"><span>
+### 案例
 ```js
 //接收者
 class Receiver{
@@ -57,6 +70,9 @@ soldier.setExec(function(){
 
 general.invoke()//Receiver { fire: true, exec: [Function] }
 ```
+
+
+<span id="undo"><span>
 ### 添加撤销
 > 在每次执行excute之前，记录上一个或者上几个状态，以便于undo时进行撤销
 ```js
@@ -118,6 +134,7 @@ general.invoke()//开始 Receiver { name: 'soldier', exec: [Function] }
 
 ```
 
+<span id="dom"><span>
 > dom元素代替上述发起者，下例出自 【曾探】的《Javascript设计模式与开发实践》
 ```js
 var ball = document.getElementById('ball')
@@ -152,6 +169,8 @@ cancelBtn.onclick = ()=>{
 }
 
 ```
+
+<span id="reply"><span>
 ### 重做
 > 当撤销操作不可逆时，可以将历史操作记录在数组等有序列表中，然后清楚已有的对象，重新执行一遍历史操作。
 

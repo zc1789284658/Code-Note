@@ -1,14 +1,25 @@
 # 装饰器模式
+目录
+- [定义](#define)
+- [模拟传统面向对象语言的装饰器模式](#simular)
+- [js装饰器](#jsdecorator)
+- [用AOP装饰函数](#aop)
+    - [在Function原型上添加装饰器函数](#withProto)
+    - [不污染Function原型的处理](#withoutProto)
+- [ES6/7装饰器](#ES6decorator)
+- [应用](#use)
+- [装饰器模式和代理模式](#compare)
+- [装饰器模式和适配器模式](#diff)
 
-### 定义
+<span id='define'/>
+
+### 1.定义
 - 为对象添加新功能，并且不改变原有的结构和功能。
 - 装饰器模式将一个对象嵌入另一个对象址中，实际上相当于这个对象被另一个对象包装起来，形成一条包装链，请求随着这条链依次传递到所有的对象，每个对象都有处理这条请求的机会。
 
-### 与适配器模式不同
-- 适配器模式是之前的接口不能用，需要加个适配器进行适配，不添加新功能
-- 装饰器模式是原有的结构和功能继续使用，需要新增一些装饰性的东西来完善现有的功能
+<span id='simular'/>
 
-### 模拟传统面向对象语言的装饰器模式
+### 2.模拟传统面向对象语言的装饰器模式
 ```js
 class Plane{
     fire(){
@@ -46,7 +57,9 @@ Atom
 */
 ```
 
-### js装饰器
+<span id='jsdecorator' />
+
+### 3.js装饰器
 ```js
 var plane ={
     fire(){
@@ -83,8 +96,13 @@ atom
 - 装饰链较长时，中间变量多
 - this被劫持
 
-### 用AOP装饰函数
-#### 在Function原型上添加装饰器函数
+<span id='aop'/>
+
+### 4.用AOP装饰函数
+
+<span id='withProto'/>
+
+#### 4.1在Function原型上添加装饰器函数
 ```js
 Function.prototype.before = function(beforefn){
     var __self = this   //保存原函数的引用
@@ -127,7 +145,9 @@ after2*/
 
 上面函数对Function的原型进行了处理，如果不习惯，可以进行拆离
 
-#### 不污染Function原型的处理
+<span id='withoutProto'/>
+
+#### 4.2不污染Function原型的处理
 
 主要新增变量用于绑定this
 
@@ -155,7 +175,9 @@ a = before( a , function(){console.log('before')})
 a()
 ```
 
-### ES6/7装饰器
+<span id='ES6decorator'/>
+
+### 5.ES6/7装饰器
 - babel插件已支持
 - 第三方库：core-decorators已封装常用装饰器
 ```js
@@ -205,13 +227,17 @@ console.log(Demo.isDec)//true
 - configurable：当且仅当指定对象的属性描述可以被改变或者属性可被删除时，为true。
 - enumerable：当且仅当指定对象的属性可以被枚举出时，为 true。
 
-### 应用
+<span id='use'/>
+
+### 6.应用
 - 数据上报
 - 统计函数的执行时间
 - 动态改变函数参数
 - 等等等等
 
-### 装饰器模式和代理模式
+<span id='compare'/>
+
+### 7.装饰器模式和代理模式
 
 装饰器模式和[代理模式](https://github.com/zc1789284658/Code-Note/edit/master/design-pattern/proxy.md)的结构很像
 - 这两种模式都描述了怎样为对象提供一定程度上的间接引用，
@@ -223,3 +249,9 @@ console.log(Demo.isDec)//true
 - 装饰器模式：为对象动态添加行为。
 - 代理模式强调一种关系（Proxy和本体之间的关系），这种关系可以静态的表达， 即一开始就可以确定关系。而装饰器模式用于一开始不能确定对象的全部功能时。
 - 代理模式通常只有一层代理-本体的引用，而装饰器模式经常会形成一条长长的装饰链
+
+<span id='diff'/>
+
+### 8.装饰器模式和[适配器模式](./Adaptor.md)
+- 适配器模式是之前的接口不能用，需要加个适配器进行适配，不添加新功能
+- 装饰器模式是原有的结构和功能继续使用，需要新增一些装饰性的东西来完善现有的功能

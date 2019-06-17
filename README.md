@@ -34,7 +34,7 @@
 
 ### 12.[笔记](https://github.com/zc1789284658/Code-Note/edit/master/notes/main.md)
 
-### 13.[推荐网站](https://github.com/zc1789284658/Code-Note/edit/master/webSites/main.md)
+### 13.[推荐网站](/webSites/main.md)
 
 ### 14.[单词](https://github.com/zc1789284658/Code-Note/edit/master/words/main.md)
 
