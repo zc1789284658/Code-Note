@@ -1,23 +1,4 @@
-// const C=require('./common.js')
 
-// let a =function(e){
-//     console.log(Date.now(),e)
-// }
-// let b =C.debounce(a,1000)
-// let d =C.debounce(a,2000)
-// let e = C.throttleByTimer(a,2000)
-// b('1000')
-// d('2000')
-
-// setInterval(()=>{
-//     e('e')
-// },500)
-
-let p = new Promise(function(resolve,reject){
-    setTimeout(()=>{
-        resolve()
-    },500)
-})
 
 /**
  * Promise手写：1，状态2.队列，3失败成功描述,非异步
@@ -83,17 +64,6 @@ class Promise2{
 //     })
 // }
 
-// Promise2.all([]).then(
-//     arr=>{
-//         console.log(arr,'succ')
-//     },
-//     err=>{
-//         console.log(err,'fail')
-//     }
-// )
-
-console.log('start')
-
 let a = new Promise2((resolve,reject)=>{
     console.log('start promise\n')
     resolve('promise\n','2',3,4)
@@ -101,13 +71,6 @@ let a = new Promise2((resolve,reject)=>{
     console.log('then\n',args,'then end')
     return args;
 })
-console.log('result\n',a)
-
-console.log('sencond\n')
-
-console.log('------------------------------')
-
-console.log('start')
 
 let b = new Promise((resolve,reject)=>{
     console.log('start promise\n')
@@ -116,6 +79,3 @@ let b = new Promise((resolve,reject)=>{
     console.log('then\n',args,'then end')
     return args;
 })
-console.log('result\n',b)
-
-console.log('sencond\n')

@@ -1,7 +1,10 @@
 /**
- * 本节代码实例主要为
+ * 本节代码实例主要为防抖和节流
+ * 防抖(debounce)：抖动时，不执行函数，抖动停止一定事时间后才进行执行
+ * 节流 (throttle)：抖动时，按固定的时间间隔执行函数
  */
 
+ //防抖
 let debounce =(fn,delay)=>{
     let timer;
     return function(...args){
@@ -12,15 +15,14 @@ let debounce =(fn,delay)=>{
     }
 }
 
+ //节流
 let throttleByTimestamp=(fn,interval)=>{
     let lasttimestamp;
     return (...args)=>{
         if(!lasttimestamp){
-            console.log(lasttimestamp);
             lasttimestamp = Date.now();
             return fn(...args)
         }
-        console.log(Date.now()-lasttimestamp , interval)
         if( Date.now()-lasttimestamp > interval){
             lasttimestamp = Date.now();
             fn(...args)

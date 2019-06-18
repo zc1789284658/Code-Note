@@ -1,3 +1,6 @@
+# 希尔排序
+
+```js
 let shallSort = (arr) => {
     let increment = arr.length;
     let tmp;
@@ -20,3 +23,4 @@ let shallSort = (arr) => {
 }
 
 console.log(shallSort([2, 1, 5, 3, 4, 66, 213, 5121, 5, 12, 1, 5, 6, 78, 213,15]))
+```

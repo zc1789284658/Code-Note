@@ -1,3 +1,6 @@
+# 归并排序
+
+```js
 let count1=0
 let count2=0
 
@@ -31,4 +34,4 @@ let merge = (left, right) => {
 
 console.log(mergeSort([10,5,6,8,9,7,1,5,68,9,158,8998,9,5456]))
 
-
+```
