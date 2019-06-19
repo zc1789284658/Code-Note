@@ -1,16 +1,3 @@
-# TCP
-## tcp 三次握手：确认双方收发信息能力的过程
-
-    a->b    b:知道a能[发]，知道自己能[收]
-    b->a    a:知道自己能[收发]，知道b能[收发]
-    a->b    b:知道自己能[收发]，知道a能[收发],开始进行数据传输
-
-## tcp 四次挥手：确认可以挂断的过程
-
-    a->b    我要挂断
-    b->a    可能有残留数据，再发一会
-    b->a    发完了可以挂断了
-    a->b    挂了，别回
 # HTTP
 ## http状态码
     1xx         信息
@@ -56,7 +43,7 @@
     这是CORS中一种透明服务器验证机制，需要向跨域的资源发送一个OPTION请求，验证实际发送的请求是否是安全的
 
 # XHR
-```
+```js
     //1.创建对象
     let xhr = new XMLHttpRequest();
     //2.建立连接（设置请求类型，请求地址，http类型，是否异步，true异步， false同步）
@@ -113,7 +100,7 @@
     isHttpSuccess(xhr.success);
 
 ## FormData
-```
+```js
     let data = new FormData();
     data.append('name','zhangsan')
     data.append('file',file||new Blob(xxx))

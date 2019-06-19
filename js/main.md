@@ -11,3 +11,5 @@
 ## [节流与防抖](./throttleAndDebounce.js)
 
 ## Reflect
+
+## [new关键字](./new.md)

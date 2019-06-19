@@ -1,7 +1,9 @@
 # Promise
+
 目录
 - [.then](#then)
 - [手写Promise](#hwpromise)
+- [执行顺序](#order)
 
 <span id='then' />
 
@@ -158,6 +160,47 @@ func().then(
 
 <span id='hwpromise'/>
 
-## [手写Promise](./Promise.js)
+## [手写Promise(部分功能)](./Promise.js)
 
 - [手动实现Promise.pdf](./pdf/手动实现Promise.pdf)
+
+---
+
+<span id='order'/>
+
+## 执行顺序
+
+```js
+
+//macroTask
+setTimeout(function(){
+    console.log('定时器开始啦')
+});
+
+new Promise(function(resolve){
+    //normalTask
+    console.log('马上执行for循环啦');
+    for(var i = 0; i < 10000; i++){
+        i == 99 && resolve();
+		i>99 &&console.log('n')
+    }
+}).then(function(){
+    
+    //microTask
+    return console.log('执行then函数啦')
+});
+
+//normalTask
+console.log('代码执行结束');
+
+/*
+马上执行for循环啦
+9900 * n
+代码执行结束
+执行then函数啦
+undefined
+VM37:2 定时器开始啦
+*/
+```
+
+> normalTasks -> microTasks [FIFO] -> macroTasks [FIFO] x N
