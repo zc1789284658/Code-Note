@@ -1,5 +1,7 @@
-# vue笔记
-
+# vue
+目录：
+- [混入](#mixin)
+- [自定义指令](#directive)
 ## 1.组件中传参
 - this.$attrs.data
 - data={}
@@ -12,13 +14,14 @@
 
 ## 2.v-model='checked'
 可以监视checked属性（dom意义上以及vue-data意义上）
-
+```js
 {
     methods:{
         minus(){}
         plus(){}
     }
 }
+```
 
 ---
 
@@ -47,105 +50,18 @@ async mounted(){
 
 ## 4.filters
 处理数据，一般将相对简单的数据处理函数由methods拆分到filters，使用方法：
-```
+```js
 :title={{data.time|mktime}}
 ```
 
 ---
 
-## 5.vuex
-### 5.1 状态管理
-- 1.state
-    全局唯一
-    拆分module
-
-- 2.getter
-    
-- 3.mutation
-    修改状态操作
-    进行追溯
-
-- 4.action
-    提交mutation
-- 官方说法 mutaion同步 action异步
-- 5.modules
-    state拆分
-    1.进行数据分割
-    2.父子集action和mutation可重名，执行时将从父级到子集一并执行，便于将操作拆分
-
-
-### 5.2 创建store
-```
-const store = new Vuex.Store({
-    strict:true,
-    state:{
-        count:0
-    },
-    mutations:{
-        add_count(state,arg){
-                xxxx
-        },
-        minus_count(state,arg){
-                xxxx
-        }
-    },
-    actions:{
-        add_count(store,arg){
-            console.log(store)
-            store.commit('add_count',arg)
-        },
-        minus_count({commit},arg){
-            commit('minus_count',arg)
-        }
-    },
-    getters:{
-        getCount(state,){
-
-        }
-    }
-})
-
-this.$store.dispatch('add_count',参数)
-
-this.$store.state.a;    
-this.$store.getters.a;  //相比于state，可以添加中间层，如缓存，重复判断，节流防抖等
-```
-
-### 5.3 注册
-```
-Vue.use(Vuex)
-
-new Vue({
-    xxx,
-    xxx,
-    router,
-    store
-})
-```
-
-### 5.4 流程
-> 组件 dispath -> action ->commit ->mutation state.xxx-> state
-
-### 5.5 注意事项
-- vuex需要与computed交互使用，否则会出现在mutation中直接赋值时，监听失效的情况，需要computed做中间层进行监听
-如 
-```
-let a=12,
-let b =a,
-a=15,   //b=12
-```
-
-### 5.6 手动触发action
-1. 如mouted内进行this.$store.dispatch,适合异步操作
-2. 通过getters
-    computed进行监听处理，但是如果是异步的话，会很麻烦，async与await与computed兼容差，但是computed还需要触发，导致两难，适合通过不操作
-
-> async可以添加到任何方法上，除非无法使用，async方法的父级function也必须是async方法
-
+## 5.[vuex](./vuex.md)
+全局状态管理
 ---
 
 ## 6.vue文件
-```
+```js
 <template>
     <Header/>
 </template>
@@ -159,7 +75,7 @@ export default{
 }
 </script>
 ```
-```
+```js
 import MainIndex from './src/main'
 import MainIndex_inner from './src/main_inner'
 var router = new VueRouter({
@@ -184,7 +100,7 @@ var router = new VueRouter({
 ## 7.lazyload.
 webpack检测到组件函数化写法时，将会把Header模块拆离主文件，当使用到Header时在进行加载
 
-```
+```js
 export default{
     xxx,
     xxx,
@@ -194,11 +110,13 @@ export default{
     }
 }
 ```
-```
+
 几个命令
+
 vue list 
+
 vue init webpack test1
-```
+
 
 ---
 
@@ -269,3 +187,16 @@ new Vue({
     el:'#app',
     render:(mounte)=>{mounte(App)}
 })
+
+---
+
+## 12.可复用性&组合 
+<span id='mixin'/>
+
+### 12.1 [mixin](./mixin.md) 
+
+<span id='directive'/>
+
+### 12.2 [自定义指令](./directive.md) 
+
+### 12.3 [渲染函数 & JSX](./render.md)

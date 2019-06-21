@@ -26,17 +26,17 @@
         getAge() {
             console.log('getAge', this.age)
         }
-        get name(){
-            console.log('from get',this);
+        get name() {
+            console.log('from get', this);
         }
-        set name(newVal){
-            console.log('from set',this)
+        set name(newVal) {
+            console.log('from set', this)
         }
-        get age(){
-            console.log('from set',this)
+        get age() {
+            console.log('from set', this)
         }
-        set age(newVal){
-            console.log('from set',this)
+        set age(newVal) {
+            console.log('from set', this)
         }
     };
 
@@ -47,7 +47,7 @@
     })
 
     newPerson = () => {
-        let person = new Person("按钮2","2");
+        let person = new Person("按钮2", "2");
         person.getAge();
         person.getName();
         console.log(person.name);
@@ -55,7 +55,7 @@
     }
 
     new_Person = () => {
-        let person = new _Person("按钮3","3");
+        let person = new _Person("按钮3", "3");
         person.getAge();
         person.getName();
         person.name;

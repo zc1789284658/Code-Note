@@ -33,4 +33,50 @@
     @="\"D:\\Develop\\Microsoft VS Code\\Code.exe\" \"%V\""
     ```
 
-## 2.有趣的插件
+## 2. 插件
+- [TSLint]() + [ESLint]()
+- [Vetur]()
+- [open in browser]() + [Debugger for Chrome]()
+- [Material Theme]() + [Atom One Dark Theme]() + [Highlight Line]()
+- [Flutter]() +[Dart]()
+- [Chinese(simplified)Language]()
+- [Beautify]()
+- [VSC Netease Music]()
+- [markdown-preview-enhanced](https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/)
+
+## 3. 添加代码片段（以markdown为例）
+1. ctrl+p
+2. 输入 >snippets
+3. 选择配置用户代码片段
+4. 输入markdown，在选项卡中，打开markdown.json
+5. 输入想要的代码片段name-key-value，如下
+    ```js
+    {
+        "span code": {
+            "prefix": "span",
+            "body": [
+                "<span id='$1' />"
+            ],
+            "description": "锚点代码块"
+        },
+    }
+    /**
+    代码片段名字：span code
+    代码片段key:span
+    代码片段value:"<span id='$1' />"
+    代码片段描述：锚点代码块
+    /
+    ```
+6. 开启markdown文件智能提示
+    1. ctrl+p
+    2. 输入settings.json
+    3. 建议在底部添加key-value
+    ```json
+    {
+        <!-- 已有json -->
+       "[markdown]": {
+            "editor.quickSuggestions": true
+        }
+    }
+    ```
+
