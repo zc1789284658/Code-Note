@@ -39,3 +39,5 @@
 - [Async](https://flutterchina.club/widgets/async/)
 - [滚动](https://flutterchina.club/widgets/scrolling/)
 - [辅助功能](https://flutterchina.club/widgets/accessibility/)
+
+## 5. [添加闪屏 | 点击打开app时，立即出现的画面](./splashScreen.md)
