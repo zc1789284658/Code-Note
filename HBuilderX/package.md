@@ -1,9 +1,17 @@
-# 打包
+---
+title: HBuilderX打包
+date: 2019-06-25
+tags: [HBuilderX]
+categories: [工具]
+---
+
+# HBuilderX打包
 
 ## 安卓：免费打包
 
 ### 需要jdk环境
 #### 使用genkey
+
 ```cmd
 C:\Users\87716> keytool -genkey -alias epic7docs_zc -keyalg RSA -keysize 2048 -validity 36500 -keystore epic7docs_zc.keystore
 
@@ -30,6 +38,9 @@ CN=x, OU=x, O=x, L=x, ST=x, C=x?
 Warning:
 JKS 密钥库使用专用格式。建议使用 "keytool -importkeystore -srckeystore epic7docs_zc.keystore -destkeystore epic7docs_zc.keystore -deststoretype pkcs12" 迁移到行业标准格式 PKCS12。
 ```
+
+<!--more-->
+
 #### 使用行业标准格式 PKCS12
 ```cmd
 C:\Users\87716> keytool -importkeystore -srckeystore epic7docs_zc.keystore -destkeystore epic7docs_zc.keystore -deststoretype pkcs12

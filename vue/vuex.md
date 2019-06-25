@@ -1,3 +1,9 @@
+---
+title: vue中的状态管理
+date: 2019-06-25
+tags: [vue,js]
+categories: [前端]
+---
 # vuex | 全局状态管理
 ### 5.1 状态管理
 - 1.state
@@ -17,6 +23,8 @@
     - state拆分
     - 进行数据分割
     - 父子集action和mutation可重名，执行时将从父级到子集一并执行，便于将操作拆分
+
+<!--more-->
 
 ### 5.2 创建store
 ```js

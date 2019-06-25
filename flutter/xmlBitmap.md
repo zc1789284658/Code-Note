@@ -1,3 +1,9 @@
+---
+title: XML Bitmap
+date: 2019-06-25
+tags: [android]
+categories: [前端]
+---
 # XML Bitmap
 目录：
 - [定义](#def)

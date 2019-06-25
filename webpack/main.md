@@ -1,9 +1,18 @@
+---
+title: webpack配置
+date: 2019-06-25
+tags: [webpack , js]
+categories: [前端]
+---
 
 # 加载器（loader）
 ## file-loader
         webpack最终会将各个模块打包成一个文件，因此我们样式中的url路径是相对入口html页面的，而不是相对于原始css文件所在的路径的，这会导致图片引入失败。
     这个问题是用file-loader解决的，file-loader可以解析项目中的url引入（不仅限于css），根据我们的配置，将图片拷贝到相应的路径，再根据配置修改打包后文件
     引用路径，使之指向正确的文件。
+
+<!--more-->
+
 ## url-loader
         url-loader用于处理图片等静态资源，其中limit参数很重要，能将limit参数以下大小的文件转为base64编码以提供良好的性能
         {

@@ -1,3 +1,9 @@
+---
+title: 模板方法
+date: 2019-06-25
+tags: [js]
+categories: [设计模式]
+---
 # 模板方法
 目录
 - [定义](#define)

@@ -1,7 +1,17 @@
+---
+title: vue
+date: 2019-06-25
+tags: [js,vue]
+categories: [前端]
+---
 # vue
+
 目录：
 - [混入](#mixin)
 - [自定义指令](#directive)
+
+<!--more-->
+
 ## 1.组件中传参
 - this.$attrs.data
 - data={}

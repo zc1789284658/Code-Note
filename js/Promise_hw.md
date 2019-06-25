@@ -1,5 +1,11 @@
-
-
+---
+title: 手写Promise(部分功能)
+date: 2019-06-25
+tags: [js]
+categories: [前端]
+---
+# 手写Promise(部分功能)
+```js
 function Promise(fn) {
     var state = 'pending',
         value = null,
@@ -21,7 +27,7 @@ function Promise(fn) {
             callbacks.push(callback);
             return;
         }
-    
+
         var cb = state === 'fulfilled' ? callback.onFulfilled : callback.onRejected,
             ret;
         if (cb === null) {
@@ -34,7 +40,7 @@ function Promise(fn) {
             callback.resolve(ret);
         } catch (e) {
             callback.reject(e);
-        } 
+        }
     }
 
     function resolve(newValue) {
@@ -70,7 +76,7 @@ function Promise(fn) {
 
 new Promise(function (resolve, reject) {
     console.log('start')
-    setTimeout(()=>{
+    setTimeout(() => {
         reject(200)
     }, 2000)
 
@@ -91,3 +97,4 @@ new Promise(function (resolve, reject) {
     return ++rej
 
 })
+```

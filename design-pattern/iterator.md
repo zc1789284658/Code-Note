@@ -1,3 +1,9 @@
+---
+title: 迭代器模式
+date: 2019-06-25
+tags: [js]
+categories: [设计模式]
+---
 # 迭代器模式
 目录：
 - [涵义](#meaning)

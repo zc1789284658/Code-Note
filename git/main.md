@@ -1,5 +1,11 @@
-# git
+---
+title: git
+date: 2019-06-25
+tags: [git]
+categories: [工具]
+---
 
+# git
 
 ## 连接过ssr后，push不上去  fatal: unable to access 'https://github.com/zc1789284658/Code-Note.git/': Empty reply from server
 

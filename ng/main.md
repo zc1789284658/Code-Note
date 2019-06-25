@@ -1,24 +1,31 @@
+---
+title: Angular
+date: 2019-06-25
+tags: [js,angular]
+categories: [前端]
+---
+
 # Angular
 ## ng 1.x(对ng历史不感兴趣的可以跳过)
-```
-ng-app=''
 
-ng-model='a'   {{a}}
+        ng-app=''
 
-ng-init='a=12;arr=[1,2,3,4]'
+        ng-model='a'   {{a}}
 
-ng-bind='a'             输出并覆盖到html中
-    <div ng-bind='a'>我是：</div>   //div中将显示12
+        ng-init='a=12;arr=[1,2,3,4]'
 
-ng-repeat='a in arr track by $index'
-    ng中系统变量基本都带$前缀
+        ng-bind='a'             输出并覆盖到html中
+        <div ng-bind='a'>我是：</div>   //div中将显示12
 
-ng事件： onclick->ng-click=''，onmouseover->ng-mouseover,以此类推
+        ng-repeat='a in arr track by $index'
+        ng中系统变量基本都带$前缀
 
-ng-show
+        ng事件： onclick->ng-click=''，onmouseover->ng-mouseover,以此类推
 
-ng-if
-```     
+        ng-show
+
+        ng-if
+
 
 ### `controller`  
 对应vue中的let vm =new Vue({})
@@ -27,11 +34,11 @@ ng-if
 3. 挂载组件
 4. 挂载controller
 5. 挂载$scope函数时需要添加(),方便添加参数，并且不添加的话将失效，
-```
-x ng-click='fn'
-√ ng-click='fn()'
-```        
-```
+
+        x ng-click='fn'
+        √ ng-click='fn()'
+
+```js
 let mod = angular.module('name',[parentMod1,parentMod2,...parentMods])
 
 mod.controller('ctrl1',function($scope,$http,$interval){
@@ -50,6 +57,7 @@ mod.controller('ctrl2',function(){
     <div ng-controller="ctrl2" ng-click='fn()'></div>
 </div>
 ```
+
 ### `小记`
 ng1.x对异步数据不友好
 1. 如jquery中的ajax获取到数据后赋值到$scope时，无法监听到
@@ -60,12 +68,13 @@ ng1.x对异步数据不友好
 
 ### `依赖注入`
 > ng的controller中，arguments顺序随意编写，会自动处理，但是其原理还待解析，下两者等同 
-```    
+```js
 mod.controller('ctrl3',function($scope,$interval,$http){});
 mod.controller('ctrl4',function($interval,$scope,$http){});
 ``` 
+
 ### `filter`，如
-```
+```js
 {{birthday*1000|date:'yyyy-MM-dd'}}
 //自定义filter：
 mod.filter('mktime',(){})
@@ -75,32 +84,31 @@ mod.filter('mktime',(){})
 
 ## ng 4.x
 `安装，新建项目`
-```
-npm i -g @angular/cli
-ng new [projectname]
 
-//目录结构
-|-src
-|--app
-|---app.component.html
-|---app.component.css
-|---app.component.ts
-|---app.module.ts
-|--list
-|---list.component.html
-|---list.component.css
-|---list.component.ts
-|---list.module.ts
-|---list_item.component.html
-|---list_item.component.css
-|---list_item.component.ts
+        npm i -g @angular/cli
+        ng new [projectname]
+        //目录结构
+        |-src
+        |--app
+        |---app.component.html
+        |---app.component.css
+        |---app.component.ts
+        |---app.module.ts
+        |--list
+        |---list.component.html
+        |---list.component.css
+        |---list.component.ts
+        |---list.module.ts
+        |---list_item.component.html
+        |---list_item.component.css
+        |---list_item.component.ts
 
-html和css照样写
-ts中将组件export出去
-module中将组件进行挂载
-```
+        html和css照样写
+        ts中将组件export出去
+        module中将组件进行挂载
+
 `组件实例：`
-```
+```js
 list.component.ts
 import {Component} from '@angular/core'
 @Component({
@@ -115,7 +123,7 @@ export class List{
 //list.module.ts
 ```
 
-```
+```js
 import {NgModule} from '@angular/core'
 import {BrowserModule} from '@angular/platform-browser'
 
@@ -132,6 +140,7 @@ import {yyy} from 'xxx'                 //组件引入
 })
 export class ListModule{}
 ```
+
 `解析：`
 1. declarations：声明module使用了那些组件，
 2. imports：该module使用了哪些module，
@@ -150,6 +159,7 @@ export class ListModule{}
 //item.component.html
 <li>{{str}}</li>
 ```
+
 父组件
 ```
 //list.component.ts
@@ -168,15 +178,16 @@ export class ListItem{
 `循环`
 
 ng4.x版本指令以*开头
-```
+```html
 <li-item *ngFor='let a of arr' [str]='a'></li-item>
 ```
 
 `事件`
-```
+```html
 <li (click)='fn()'></li>
 ```
-```
+
+```js
 export class ListItem{
         fn(){
                 alert('a')
@@ -185,7 +196,8 @@ export class ListItem{
 ```
 
 `钩子函数和http连接`
-```
+
+```js
 import {OnInit,Component} from '@angular/core'
 import {Http} from '@angular/http'
 export class ListItem{
@@ -215,7 +227,7 @@ export class ListItem{
 1. 向框架请求http依赖项
 2. 添加http依赖
 在appmodule中引入httpModule
-```
+```js
 import {HttpModule} from '@angular/http'
 @NgModule({
         declarations:[],
@@ -227,7 +239,7 @@ import {HttpModule} from '@angular/http'
 
 `router路由`
 
-```
+```js
 import {RouterModule,Routes} from '@angular/router'
 import {routeComponentModule} from 'xxxxxx'     //将组件以module形式exports出去，否则挂载时报找不到
 @NgModule({
@@ -236,14 +248,15 @@ import {routeComponentModule} from 'xxxxxx'     //将组件以module形式export
 })
 ```
 `路由表`
-```
+```js
 const routes:Routers=[
         {path:'a',component:CmpA},
         {path:'b',component:CmpB},
         {path:'c',component:CmpC},
 ]
 ```
-```
+
+```js
 import {RouterModule,Routes} from '@angular/router'
 import {CmpA} from '/component/CmpA'
 import {CmpB} from '/component/CmpB'
@@ -255,10 +268,11 @@ const routes:Routes = [
 export default RouterModule.forRoot(routes)
 ```
 使用：非hash，即直接在路径中进行切换,好处是hash的#消失，坏处是会进行页面刷新，会不会与后台接口路径重复待确定
+
 http:localhost:8080 ->http://localhost:8080/a
 
 `子路由`
-```
+```js
 const child:Routes=[
         {path:'c',component:'xxx'},
         {path:'d',component:'xxy'},
@@ -267,7 +281,7 @@ RouterModule.forChild('a',child)
 ```
 
 `路由参数`
-```
+```js
 import {ActivatedRoute,Params} from '@angular/router'
 
 export class DetailComponent{

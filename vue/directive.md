@@ -1,3 +1,10 @@
+---
+title: vue中的自定义指令
+date: 2019-06-25
+tags: [js,vue]
+categories: [前端]
+---
+
 # directive | 自定义指令
 目录：
 - [简介](#directive-intro)
@@ -5,6 +12,8 @@
 - [钩子函数参数](#directive-hooks-arguments)
 - [函数简写](#directive-function-simplified)
 - [对象字面量](#directive-object-literal)
+
+<!--more-->
 
 #### 简介 <span id='directive-intro'/>
 

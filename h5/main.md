@@ -1,3 +1,10 @@
+---
+title: BLOB URL / DATA URI / 
+date: 2019-06-25
+tags: [js]
+categories: [前端,原生js]
+---
+
 # BLOB URL / DATA URI / 
 
 ## BLOB URL
@@ -8,7 +15,8 @@
 Blob URL / Object URL是一种伪协议，允许Blob和File对象用作图像，下载二进制数据链接等的URL源。是html5中blob对象在赋给video标签后生成的一串标记，blob对象对象包含的数据，浏览器内部会解析；用于将二进制数据直接加载到浏览器内存中，
 
 ### 使用input将文件二进制流转为ObjectURL
-可以将文件转为url连接进行播放，如[测试页面](./blob.html)中,就将文件框中的视频转为ObjectUrl
+可以将文件转为url连接进行播放，如<!--[测试页面](./blob.html)-->[测试页面](https://github.com/zc1789284658/Code-Note/edit/master/h5/blob.html)中,就将文件框中的视频转为ObjectUrl
+
 ```js
 $('#video2').src = URL.createObjectURL($('#file').files[0])
 ```

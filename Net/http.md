@@ -1,3 +1,9 @@
+---
+title: HTTP
+date: 2019-06-25
+tags: [net]
+categories: [后端]
+---
 # HTTP
 ## http状态码
     1xx         信息
@@ -11,6 +17,9 @@
     6xx+        自定义状态码
     
     成功：2xx 304
+
+<!--more-->
+
 ## 重定向作用
     1.对不同端进行不同url的跳转
         如PC ->www.taobao.com , 手机-> m.taobao.com

@@ -1,3 +1,9 @@
+---
+title: 微信相关
+date: 2019-06-25
+tags: ['wx']
+categories: [前端]
+---
 # 微信
 - 1.订阅号
     每天一次推送，个人可注册
@@ -5,6 +11,8 @@
     每月4次推送，功能复杂
 - 3.小程序
     功能强，不能推送
+
+<!--more-->
 
 ---
 
@@ -34,10 +42,10 @@
 - 登陆扫码等都在公众平台API中
 
 ## 6.输出输入变量
-- wx输出变量(除了函数)时，都需要用{{}}进行包裹，无论是作为wxml的属性还是内容，否则将解析为字符串,如 hidden="{{true}}";
+- wx输出变量(除了函数)时，都需要用`双大括号`进行包裹，无论是作为wxml的属性还是内容，否则将解析为字符串,如 hidden="{{true}}";
 - 输出函数时，无法添加参数，需要参数时添加data-xxx;
 - 取data-xxx时，可以通过event进行获取，ev.target.dataset.xxx;
-```
+```html
 <scroll-view scroll-y="{{true}}">
     <view class='parent'>
         <view wx:for="{{arr}}" class="{{index===now?'active':'now'}}" bind:tap="setnow" data-index='{{index}}'>{{item}}</view>
@@ -47,7 +55,7 @@
 
 ## 7.wx:for循环
 - 循环中wx系统定义的下标以及元素：index/item
-```
+```html
 <view wx:for="{{arr}}" wx:key="{{index}}"> 
         {{index}}:{{item}}
 </view>
@@ -58,7 +66,7 @@
 ## 8.wx:if="{{xxx}}"
 
 ## 9.操作数据以及钩子函数
-```
+```html
 <!-- 函数内获取 ：this.data.xxx
     页面内获取 ：{{xxx}} 
     函数内设置：this.setData({xxx:xxxx,...args})
@@ -196,4 +204,4 @@ app.json中，一级输入tab，即可自动提示如下内容
     }
 }
 ```
-![图片](./images/wx-tabbar.png)
+![](https://raw.githubusercontent.com/zc1789284658/Code-Note/master/WX/images/wx-tabbar.png)

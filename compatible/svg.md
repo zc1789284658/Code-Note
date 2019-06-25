@@ -1,3 +1,9 @@
+---
+title: 兼容处理svg
+date: 2019-06-25
+tags: [svg]
+categories: [前端,兼容]
+---
 # 兼容处理svg
 
 ## 1、svg image标签降级技术：
@@ -5,6 +11,9 @@
 svg不能很好的在anroid2.3中得到支持，需要额外的补充，IE8-以及Android 2.3默认浏览器是不支持SVG的。
 
 svg image标签降级技术，这是一个名叫Alexey Ten首先提出来的，类似下面的代码：
+
+<!--more-->
+
 ```css
 <svg width="96" height="96">
   <image xlink:href="svg.svg" src="svg.png" width="96" height="96" />

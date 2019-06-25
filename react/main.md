@@ -1,4 +1,10 @@
-﻿# REACT
+﻿---
+title: React相关
+date: 2019-06-25
+tags: [react,js]
+categories: [前端]
+---
+# REACT
 
 ## 基础概念
 ```
@@ -10,6 +16,8 @@ jsx支持es6语法，当年大多浏览器不支持es6时，jsx语法支持，js
 
 react是组件化的先驱
 ```
+
+<!--more-->
 
 ---
 

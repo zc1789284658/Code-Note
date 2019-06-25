@@ -1,6 +1,14 @@
+---
+title: 笔记
+date: 2019-06-25
+tags: [performance,js]
+categories: [前端,优化]
+---
 # NOTES
 
 ## web 性能
+
+<!--more-->
 
 ### 1.资源方向
 
@@ -32,6 +40,14 @@
 - js 递归拆分
 - js 大循环使用 [Duff's Device](#duff) 进行简化，下面还可优化为 while 循环，一般一次性 8 次
 
+### 3.工具方向
+  - tree-shaking（webpack4自带）
+  - 首屏分离/骨架屏
+  - 懒加载
+
+### 4.框架方向
+  - vue : mixin/render/slot/  ->  setup
+  - react: mixin/HOC/jsx      ->  hooks
 
 
 

@@ -1,3 +1,9 @@
+---
+title: Linux
+date: 2019-06-25
+tags: [linux]
+categories: [后端]
+---
 # Linux
 ## service [xxx] [command]
 ```
@@ -5,6 +11,8 @@ service network restart   //重启网卡
 
 /etc/init.d/network restart  //上面的命令实际上是调用此脚本进行操作
 ```
+
+<!--more-->
 
 ---
 

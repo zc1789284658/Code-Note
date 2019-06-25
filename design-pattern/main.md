@@ -1,3 +1,9 @@
+---
+title: 设计模式（js）
+date: 2019-06-25
+tags: [js]
+categories: [设计模式]
+---
 # 设计模式（js）
 
 提示：`这种模式` 表示此模式在js中使用场景不多或者不重要。
@@ -88,15 +94,20 @@
 
 # 图解
 
-![image](./image/design-patter-1.webp)
+<!-- ![image](./image/design-patter-1.webp) -->
+![image](https://raw.githubusercontent.com/zc1789284658/Code-Note/master/design-pattern/image/design-patter-1.webp)
 
-![image](./image/design-patter-2.webp)
+<!-- ![image](./image/design-patter-1.webp) -->
+![image](https://raw.githubusercontent.com/zc1789284658/Code-Note/master/design-pattern/image/design-patter-2.webp)
 
 
 # 文字解释
 分类：
+<!-- ![image](./image/design-patter-1.webp) -->
+![image](https://raw.githubusercontent.com/zc1789284658/Code-Note/master/design-pattern/image/design-patter-1.webp)
 
-![image](./image/design-patter-3.png)
+<!-- ![image](./image/design-patter-3.png) -->
+![image](https://raw.githubusercontent.com/zc1789284658/Code-Note/master/design-pattern/image/design-patter-3.png)
 
 创建模式：单件模式、工厂模式、抽象工厂模式、生成器模式、原型模式。
 

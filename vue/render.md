@@ -1,3 +1,9 @@
+---
+title: vue中的render
+date: 2019-06-25
+tags: [vue,js]
+categories: [前端]
+---
 # 渲染函数 & JSX
 目录：
 - [基础](#render-basic)
@@ -18,6 +24,7 @@
     - [slots() 和 children 对比](#)
 - [模板编译](#render-template)
 
+<!--more-->
 ## 基础 <span id='render-basic' />
 
 Vue 推荐在绝大多数情况下使用模板来创建你的 HTML。然而在一些场景中，你真的需要 JavaScript 的完全编程的能力。这时你可以用渲染函数，它比模板更接近编译器。

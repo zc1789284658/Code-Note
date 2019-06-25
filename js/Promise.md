@@ -1,9 +1,17 @@
+---
+title: Promise
+date: 2019-06-25
+tags: [js]
+categories: [前端,原生js]
+---
 # Promise
 
 目录
 - [.then](#then)
 - [手写Promise](#hwpromise)
 - [执行顺序](#order)
+
+<!--more-->
 
 <span id='then' />
 
@@ -101,7 +109,7 @@ undefined
     每个then只可能使用前一个then的返回值。
 
 #### 直观的图
-![image](./image/then.png)
+![image](https://raw.githubusercontent.com/zc1789284658/Code-Note/master/js/image/then.png)
 
 #### 有了上面的定义我们带着三个疑问来回答问题：
 1. 上一个then中传入了回调函数吗？
@@ -162,7 +170,9 @@ func().then(
 
 ## [手写Promise(部分功能)](./Promise.js)
 
-- [手动实现Promise.pdf](./pdf/手动实现Promise.pdf)
+- [手动实现Promise.pdf](https://github.com/zc1789284658/Code-Note/edit/master/js/pdf/手动实现Promise.pdf)
+
+- [手动实现Promise.md](./Promise_hw.md)
 
 ---
 

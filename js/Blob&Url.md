@@ -1,11 +1,19 @@
-# BLOB AND URL
+---
+title: BLOB & URL
+date: 2019-06-25
+tags: [js]
+categories: [前端,原生js]
+---
+# Blob & Url
 
-[引发场景](../h5/main.md)
+[引发场景](https://github.com/zc1789284658/Code-Note/edit/master/h5/main.md)
 
 拓展
 - File​Reader
 - MediaSource
 - Data URI
+
+<!--more-->
 
 ## URL.create​ObjectURL()
 URL.createObjectURL() 静态方法会创建一个 DOMString，其中包含一个表示参数中给出的对象的URL。这个 URL 的生命周期和创建它的窗口中的 document 绑定。这个新的URL 对象表示指定的 File 对象或 Blob 对象。

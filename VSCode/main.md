@@ -1,5 +1,13 @@
-
+---
+title: vscode相关
+date: 2019-06-25
+tags: [vsc]
+categories: [工具]
+---
+# vscode相关
 ## 1.安装VSCode时，未添加右键快速打开文件夹/文件的解决方案
+
+<!--more-->
 
 1. 方案1： 重新安装VSCode
 2. 方案2（推荐）： <br>

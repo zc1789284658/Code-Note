@@ -1,8 +1,17 @@
+---
+title: new关键字
+date: 2019-06-25
+tags: [js]
+categories: [前端,原生js]
+---
 # new 
 - [只能通过new调用函数](#onlynew)
     - [this instanceof xx](#instanceof)
     - [new.target](#newtarget)
 - [用原生js实现一个new方法](#hwnew)
+
+
+<!--more-->
 
 <span id='onlynew'/>
 

@@ -1,3 +1,10 @@
+---
+title: 算法
+date: 2019-06-25
+tags: [js]
+categories: [算法，汇总]
+---
+
 # 算法
 ## 排序
 - [1.快速排序](./sort-quick.md)
