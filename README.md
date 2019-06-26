@@ -18,6 +18,8 @@ categories: [汇总]
 <!--更更欢迎`star`以及`fork`-->
 ## [github连接](https://github.com/zc1789284658/Code-Note)
 
+## [github主页](https://zc1789284658.github.io/)
+
 ### 1.[VSCode](https://github.com/zc1789284658/Code-Note/blob/master/VSCode/main.md)
 
 ### 2.[网络通信](https://github.com/zc1789284658/Code-Note/blob/master/Net/main.md)
