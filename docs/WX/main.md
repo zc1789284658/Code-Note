@@ -1,9 +1,4 @@
----
-title: 微信相关
-date: 2019-06-25
-tags: ['wx']
-categories: [前端]
----
+
 # 微信
 - 1.订阅号
     每天一次推送，个人可注册
@@ -42,9 +37,11 @@ categories: [前端]
 - 登陆扫码等都在公众平台API中
 
 ## 6.输出输入变量
+
 - wx输出变量(除了函数)时，都需要用`双大括号`进行包裹，无论是作为wxml的属性还是内容，否则将解析为字符串,如 hidden="{{true}}";
 - 输出函数时，无法添加参数，需要参数时添加data-xxx;
 - 取data-xxx时，可以通过event进行获取，ev.target.dataset.xxx;
+
 ```html
 <scroll-view scroll-y="{{true}}">
     <view class='parent'>
@@ -54,18 +51,22 @@ categories: [前端]
 ```
 
 ## 7.wx:for循环
+
 - 循环中wx系统定义的下标以及元素：index/item
+
 ```html
 <view wx:for="{{arr}}" wx:key="{{index}}"> 
         {{index}}:{{item}}
 </view>
 ```   
+
 - 重命名下标以及元素字面量
 -  wx:for-item="element" wx:for-index="idx"
 
 ## 8.wx:if="{{xxx}}"
 
 ## 9.操作数据以及钩子函数
+
 ```html
 <!-- 函数内获取 ：this.data.xxx
     页面内获取 ：{{xxx}} 
@@ -100,11 +101,13 @@ Page({
 ```
 
 ## 10.开发者工具
+
 - 将wxml解析为html后，渲染完毕后再解析会wxml进行开发者工具展示
 - wxml->html->wxml
 - 在html->wxml时，会出现bug，导致代码层级和实际显示的层级不一致
 
 ## 11.远端获取数据
+
 ```js
 wx.request({
     url:,
@@ -131,7 +134,9 @@ wx.$request = function(){
     })
 }
 ```
+
 ## 12.页面切换
+
 ```js
 <!-- 页面跳转 -->
 <view>
@@ -140,8 +145,11 @@ wx.$request = function(){
 <!-- js跳转 -->
     wx.navigatorTo...
 ```
+
 ## 13.拍照
+
 - 配合<camera>标签使用
+
 ```js
 const cam = wx.createCameraContext();
 cam.takePhoto({
@@ -154,14 +162,18 @@ cam.takePhoto({
 })
 ```
 ## 14.扫码
+
 ```
 wx.scanCode()...
 ```
+
 ## 15.扒小程序
+
 - 利用抓包工具抓包
 - 缺点：只能抓编译后代码
 
 ## 16.插件
+
 - 插件都有id
     * 插件所属的小程序的id
 - 写插件
@@ -182,6 +194,7 @@ wx.scanCode()...
     * |-project.config.json
 
 ## 17.声明：
+
 ```
 小程序
     APP({})
@@ -191,7 +204,9 @@ wx.scanCode()...
 ```
 
 ## 18.底部菜单栏
+
 app.json中，一级输入tab，即可自动提示如下内容
+
 ```js
 {
     "tabBar": {
