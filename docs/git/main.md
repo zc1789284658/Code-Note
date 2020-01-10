@@ -68,7 +68,10 @@ git config user.email xxxxxxxx
 #### 3.3 添加配置
     ```bash
     #  /.ssh/config
-    HostName github.com
-    User git
-    IdentityFile ~/.ssh/id_rsa_github #此处ssh文件需要与平台对应
+    Host github
+        HostName github.com
+        IdentityFile ~/.ssh/id_rsa_github
+    Host gitlab
+        HostName gitlab.com
+        IdentityFile ~/.ssh/id_rsa
     ```
