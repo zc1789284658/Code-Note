@@ -64,7 +64,7 @@ git config --local user.email xxxxxxxx
     $ cd ~/.ssh
     ```
 
-#### 3.2 生成的ssh通过ssh-add添加(临时添加/永久添加需要脚本协助)
+#### 3.2 (可跳过)生成的ssh通过ssh-add添加(临时添加/永久添加需要脚本协助)
     ```bash
     $ ssh-agent
     # if windows , use Administrator account to excuse POWERSHELL，and excute `Set-Service -Name ssh-agent -StartupType automatic`，then excute `ssh-agent`
@@ -81,10 +81,12 @@ git config --local user.email xxxxxxxx
 #### 3.3 添加配置
     ```bash
     #  /.ssh/config
-    Host github
-        HostName github.com
-        IdentityFile ~/.ssh/id_rsa_github
-    Host gitlab
-        HostName gitlab.com
-        IdentityFile ~/.ssh/id_rsa
+    # host最好配域名，否则可能找不到对应的ssh-key
+    Host gitlab.com
+    HostName gitlab.com
+    IdentityFile C:\Users\EDZ\.ssh\id_rsa_gitlab
+        
+    Host github.com
+    HostName github.com
+    IdentityFile C:\Users\EDZ\.ssh\id_rsa_github
     ```
