@@ -26,10 +26,15 @@ $ git config http.sslVerify "false"
 ## 
 $ git config --global credential.helper store
 
+## git全局仓库设置
+
+git config --global user.name  xxxxx
+git config --global user.email xxxxxxxx
+
 ## git当前仓库用户设置
 
-git config user.name  xxxxx
-git config user.email xxxxxxxx
+git config --local user.name  xxxxx
+git config --local user.email xxxxxxxx
 
 ## ssh测试链接是否正常
 
@@ -54,15 +59,23 @@ git config user.email xxxxxxxx
 #### 3.1 .ssh目录
     ```bash
     # windows:
-    cd C:\Users\xxx\.ssh
+    $ cd C:\Users\xxx\.ssh
     # linux:
-    cd ~/.ssh
+    $ cd ~/.ssh
+    ```
+
+#### 3.2 生成的ssh通过ssh-add添加(临时添加/永久添加需要脚本协助)
+    ```bash
+    $ ssh-agent
+    # if windows , use Administrator account to excuse POWERSHELL，and excute `Set-Service -Name ssh-agent -StartupType automatic`，then excute `ssh-agent`
+    $ ssh-add C:\Users\EDZ\.ssh\id_rsa
+    $ ssh-add C:\Users\EDZ\.ssh\id_rsa_github
     ```
 
 #### 3.2 创建config
     ```bash
-    touch config
-    vi config
+    $ touch config
+    $ vi config
     ```
 
 #### 3.3 添加配置
