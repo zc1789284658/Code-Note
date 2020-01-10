@@ -25,3 +25,50 @@ $ git config http.sslVerify "false"
 
 ## 
 $ git config --global credential.helper store
+
+## git当前仓库用户设置
+
+git config user.name  xxxxx
+git config user.email xxxxxxxx
+
+## ssh测试链接是否正常
+
+    ssh -T git@github.com
+    ssh -T git@gitlab.com
+    ...
+
+## git多ssh管理
+
+### 1.ssh-keygen 创建新ssh
+    ```bash
+    ssh-keygen
+    ```
+
+### 2.本地链接新仓库host信息
+    ```bash
+    git remote show origin
+    ```
+
+### 3.在.ssh/目录下添加config配置各网址所使用的ssh-key
+
+#### 3.1 .ssh目录
+    ```bash
+    # windows:
+    cd C:\Users\xxx\.ssh
+    # linux:
+    cd ~/.ssh
+    ```
+
+#### 3.2 创建config
+    ```bash
+    touch config
+    vi config
+    ```
+
+#### 3.3 添加配置
+    ```bash
+    #  /.ssh/config
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa_github #此处ssh文件需要与平台对应
+    ```
