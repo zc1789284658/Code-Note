@@ -1,0 +1,2 @@
+计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion
+EditionID : CoreCountrySpecific -> Professional
